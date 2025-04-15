@@ -1,0 +1,35 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #f0f0f0; /* Couleur de fond */
+    overflow: hidden; /* Empêche l'icône de dépasser du div */
+  }
+  
+  .moving-icon {
+    position: absolute;
+    top: 50%; /* Centrer l'icône verticalement */
+    left: 100%; /* Démarre à droite */
+    width: 30px; /* Taille de l'icône */
+    height: 30px; /* Taille de l'icône */
+    background-image: url('votre-icone.png'); /* Mettez ici l'URL de votre icône */
+    background-size: cover;
+    transform: translateY(-50%); /* Centrer verticalement */
+    animation: moveIcon 5s infinite linear; /* Animation qui dure 5 secondes, infinie, en mouvement linéaire */
+  }
+  
+  @keyframes moveIcon {
+    0% {
+      left: 100%; /* Commence à droite */
+      transform: translateY(-50%) rotate(0deg); /* Aucune rotation au début */
+    }
+    50% {
+      left: 0%; /* Va à gauche */
+      transform: translateY(-50%) rotate(180deg); /* Rotation à 180 degrés */
+    }
+    100% {
+      left: 100%; /* Retourne à droite */
+      transform: translateY(-50%) rotate(360deg); /* Rotation complète à 360 degrés */
+    }
+  }
+  

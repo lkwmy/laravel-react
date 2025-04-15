@@ -1,0 +1,8 @@
+pour change le title et l'image aussi de notre site on le trouve dans index.html <title> notre titre <title/>
+faire une formation reduxjs/toolkit 
+createSlice 
+
+3:14
+
+
+il faut voir le vidéo de travery media : Laravel Rest Api with sanctum Authentication 

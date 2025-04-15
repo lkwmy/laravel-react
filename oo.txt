@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\UserAdmin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+
+class AdminAuthController extends Controller
+{
+     // Gérer le login
+     public function login(Request $request)
+     {
+         // Valider les données envoyées
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|string|min:6',
+        ]);
+         // Rechercher l'utilisateur dans la table `useradmin`
+         $admin = UserAdmin::where('email', $request->email)->first();
+
+         // Vérifier si l'utilisateur existe et si le mot de passe est correct
+         if ($admin && Hash::check($request->password, $admin->password)) {
+            // Créer un token pour l'authentification (si vous utilisez sanctum ou passport)
+            $token = $admin->createToken('authToken')->plainTextToken;
+        
+            // Retourner une réponse JSON avec l'utilisateur et le token
+            return response()->json([
+                'message' => 'Login successful',
+                'admin' => $admin,
+                'token' => $token,
+            ], 200);
+        } 
+        
+        // Retourner une réponse en cas d'échec
+        return response()->json([
+            'message' => 'Invalid credentials',
+        ], 401);
+
+     
+          
+     }
+  
+
+    // Gérer l'enregistrement
+    public function register (Request $request)
+    {
+        $request->validate([
+            'name' => 'string|max:255',
+            'email' => 'required|email|unique:useradmin,email',
+            'password' => 'required|string',
+        ]);
+         UserAdmin::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        // return redirect()->route('admin.login')->with('success', 'Compte créé avec succès');
+        return response()->json(['message' => 'Admin registered successfully'], 201);
+    }
+        // Déconnexion 
+        public function Logout ()
+        {
+            Auth::guard('admin')->Logout();
+            return redirect()->route('admin.login');
+        }
+}
