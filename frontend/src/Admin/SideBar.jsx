@@ -18,7 +18,7 @@ function SideBar() {
       {/* Sidebar */}
       <div className="w-64 bg-white shadow-md">
         <div className="p-4">
-          <h2 className="text-lg font-semibold text-gray-800">Admin Dashboard</h2>
+          <h2 className="text-lg font-semibold text-gray-800">Tableau de bord d'administration</h2>
         </div>
         <nav>
           <ul className="space-y-2">

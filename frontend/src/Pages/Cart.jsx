@@ -96,7 +96,7 @@ function Cart() {
                     <button
                    className='w-full bg-red-600 text-white py-2 hover:bg-red-800' 
                    onClick={() => navigate('/checkout')}>
-                        Checkout</button>
+                        Vérifier</button>
             </div>
         </div>
         <Modal 

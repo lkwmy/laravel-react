@@ -32,9 +32,9 @@ function AddUser() {
     const {success, message} = await  addUser(formDataUser);
 
     if (success){
-      setMessage("User added successfully!");
+      setMessage("Utilisateur ajouté avec succès !");
     } else {
-      setMessage( message ||"Failed to add user. Please try again.")
+      setMessage( message ||"Échec de l'ajout de l'utilisateur. Veuillez réessayer.")
     }
 
   }
@@ -44,10 +44,10 @@ function AddUser() {
       <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
         <div className="mb-8">
           <h2 className="text-center text-3xl font-extrabold text-gray-900">
-            Add User 
+          Ajouter un utilisateur
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Fill in the user details below
+          Remplissez les détails de l'utilisateur ci-dessous
           </p>
         </div>
 
@@ -56,7 +56,7 @@ function AddUser() {
           <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
             <div className="sm:col-span-2">
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Name
+              Nom
               </label>
             </div>
             <div className="sm:col-span-4">
@@ -96,7 +96,7 @@ function AddUser() {
              <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
             <div className="sm:col-span-2">
               <label htmlFor="number" className="block text-sm font-medium text-gray-700">
-                Number
+                Télephone
               </label>
             </div>
             <div className="sm:col-span-4">
@@ -152,13 +152,13 @@ function AddUser() {
                 href="/dashboard/admin/addUser"
                 className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                Cancel
+                Annuler
               </a>
               <button
                 type="submit"
                 className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                Add User
+                Ajouter un utilisateur
               </button>
             </div>
           </div>

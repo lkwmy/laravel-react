@@ -6,7 +6,7 @@ function EditProduct({ productId }) {
 
   useEffect(() => {
     // Utilisez `productId` pour récupérer les données du produit à éditer
-    console.log("Product ID to edit:", productId);
+    console.log("ID du produit à modifier :", productId);
     // Vous pouvez faire un appel API pour récupérer les données du produit avec cet ID
   }, [productId])
 
@@ -36,7 +36,7 @@ function EditProduct({ productId }) {
     const files = Array.from(e.target.files); // Conversion des fichiers téléchargés en un tableau.
     // Vérifiez que l'utilisateur ne télécharge pas plus de 5 images
     if (files.length + images.length > 5) {
-      setMessage("You can upload up to 5 images only."); // Affiche un message d'erreur si la limite est dépassée.
+      setMessage("Vous ne pouvez télécharger que 5 images maximum."); // Affiche un message d'erreur si la limite est dépassée.
       return;
     }
 
@@ -83,10 +83,10 @@ function EditProduct({ productId }) {
         description: "",
       });
       setImages([]); // Réinitialise la liste des images téléchargées.
-      setMessage("Product edited successfully!"); // Affiche un message de succès.
+      setMessage("Produit édité avec succès !"); // Affiche un message de succès.
       navigate("/dashboard/admin/product");  // Redirige l'utilisateur vers une autre page.
     } else {
-      setMessage("Failed to edit product"); // Affiche un message d'échec en cas de problème
+      setMessage("Impossible de modifier le produit"); // Affiche un message d'échec en cas de problème
     }
   };
 
@@ -96,10 +96,10 @@ function EditProduct({ productId }) {
         <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
           <div className="mb-8">
             <h2 className="text-center text-3xl font-extrabold text-gray-900">
-              Edit Product : {productId}
+            Modifier le produit : {productId}
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              Fill in the product details below
+            Remplissez les détails du produit ci-dessous
             </p>
           </div>
           <form className="space-y-6" onSubmit={handleSubmit}>
@@ -107,7 +107,7 @@ function EditProduct({ productId }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
+                Nom
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -127,7 +127,7 @@ function EditProduct({ productId }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="brand" className="block text-sm font-medium text-gray-700">
-                  Brand
+                Marque
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -147,7 +147,7 @@ function EditProduct({ productId }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700">
-                Quantity
+                Quantité
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -171,7 +171,7 @@ function EditProduct({ productId }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="price" className="block text-sm font-medium text-gray-700">
-                  Price
+                  Prix
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -213,7 +213,7 @@ function EditProduct({ productId }) {
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="images" className="block text-sm font-medium text-gray-700">
-                  Upload Images (max 5)
+                Télécharger des images (max 5)
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -225,7 +225,7 @@ function EditProduct({ productId }) {
                   className="block w-full text-sm text-gray-500"
                   onChange={handleImageChange}
                 />
-                <p className="mt-2 text-sm text-gray-500">You can upload up to 5 images.</p>
+                <p className="mt-2 text-sm text-gray-500">Vous pouvez télécharger jusqu'à 5 images.</p>
               </div>
             </div>
 
@@ -248,7 +248,7 @@ function EditProduct({ productId }) {
                  rounded-full flex items-center justify-center transition-colors duration-200 
                  opacity-0 group-hover:opacity-100 shadow-md"
       >
-        <span className="sr-only">Remove image</span>
+        <span className="sr-only">Supprimer l'image</span>
         <svg 
           className="w-4 h-4" 
           fill="none" 
@@ -273,14 +273,14 @@ function EditProduct({ productId }) {
                   href="/dashboard/admin/product"
                   className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  Cancel
+                 Annuler
                 </a>
                 <button
                   type="submit"
                   className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                   disabled={images.length > 5} // Désactive le bouton si plus de 5 images
                 >
-                  Update Product
+                  Mettre à jour le produit
                 </button>
               </div>
             </div>

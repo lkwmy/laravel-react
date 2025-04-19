@@ -3,7 +3,6 @@ composer create-project --prefer-dist laravel/laravel laravel-backend
 il faut installer le package laravel cors : 
 composer require fruitcake/laravel-cors
 pour l'authentification on utilise laravel breze  : 
-composer require laravel/breeze:1.9.2 
 php artisan breeze:install api
 php artisan migrate
 Laravel Sanctum est une solution simple et légère pour l'authentification des API dans Laravel. 

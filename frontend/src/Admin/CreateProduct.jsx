@@ -94,10 +94,10 @@ const { success, message } = await addProduct(productData);
         <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
           <div className="mb-8">
             <h2 className="text-center text-3xl font-extrabold text-gray-900">
-              Add Product 
+            Ajouter un produit
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
-              Fill in the product details below
+            Remplissez les détails du produit ci-dessous
             </p>
           </div>
 
@@ -106,7 +106,7 @@ const { success, message } = await addProduct(productData);
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
+                Nom
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -126,7 +126,7 @@ const { success, message } = await addProduct(productData);
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="brand" className="block text-sm font-medium text-gray-700">
-                  Brand
+                Marque
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -146,7 +146,7 @@ const { success, message } = await addProduct(productData);
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700">
-                  Quantity
+                Quantité
                 </label>
               </div>
               {/* <div className="sm:col-span-4">
@@ -165,9 +165,9 @@ const { success, message } = await addProduct(productData);
                 </select>
               </div> */}
                   <div className="sm:col-span-4">
-                        <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
+                        {/* <label htmlFor="quantity" className="block text-sm font-medium text-gray-700">
                             Quantité
-                       </label>
+                       </label> */}
                        <input
                             type="number"
                             id="quantity"
@@ -181,7 +181,7 @@ const { success, message } = await addProduct(productData);
                             // Empêche les virgules
                            e.target.value = e.target.value.replace(',', '');
                                             }}
-                           placeholder="Entrez la quentité du produit"
+                           placeholder="Entrez la quantité du produit"
                       />
                     </div>
              </div>
@@ -190,7 +190,7 @@ const { success, message } = await addProduct(productData);
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="price" className="block text-sm font-medium text-gray-700">
-                  Price
+                  Prix
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -232,7 +232,7 @@ const { success, message } = await addProduct(productData);
             <div className="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
               <div className="sm:col-span-2">
                 <label htmlFor="images" className="block text-sm font-medium text-gray-700">
-                  Upload Images (max 5)
+                Télécharger des images (max 5)
                 </label>
               </div>
               <div className="sm:col-span-4">
@@ -244,7 +244,7 @@ const { success, message } = await addProduct(productData);
                   className="block w-full text-sm text-gray-500"
                   onChange={handleImageChange}
                 />
-                <p className="mt-2 text-sm text-gray-500">You can upload up to 5 images.</p>
+                <p className="mt-2 text-sm text-gray-500">Vous pouvez télécharger jusqu'à 5 images.</p>
               </div>
             </div>
 
@@ -267,7 +267,7 @@ const { success, message } = await addProduct(productData);
                  rounded-full flex items-center justify-center transition-colors duration-200 
                  opacity-0 group-hover:opacity-100 shadow-md"
       >
-        <span className="sr-only">Remove image</span>
+        <span className="sr-only">Supprimer l'image</span>
         <svg 
           className="w-4 h-4" 
           fill="none" 
@@ -292,13 +292,13 @@ const { success, message } = await addProduct(productData);
                   href="/dashboard/admin/addProduct"
                   className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  Cancel
+                Annuler
                 </a>
                 <button
                   type="submit"
                   className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
-                  Add Product
+                  Ajouter un produit
                 </button>
               </div>
             </div>

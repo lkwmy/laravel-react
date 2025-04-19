@@ -68,7 +68,7 @@ const deleteUser = async (userId) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <AutoLogout/>
       <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-        Users Management
+      Gestion des utilisateurs
       </h2>
 
       <div className="flex justify-between items-center mb-6">
@@ -77,7 +77,7 @@ const deleteUser = async (userId) => {
             onClick={() => setIsModelAddUserOpen(true)}
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
           >
-            Add User
+            Ajouter un utilisateur
           </button>
           
           <button
@@ -88,7 +88,7 @@ const deleteUser = async (userId) => {
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
             </svg>
-            Refresh
+            Rafraîchir
           </button>
         </div>
       </div>
@@ -99,9 +99,9 @@ const deleteUser = async (userId) => {
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nom</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Number</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Téléphone</th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
               </tr>
             </thead>
@@ -120,14 +120,14 @@ const deleteUser = async (userId) => {
                       setIsModelEditUserOpen(true)}}
                       className="text-indigo-600 hover:text-indigo-900 bg-indigo-50 px-3 py-1 rounded-md hover:bg-indigo-100 transition-colors duration-200"
                     >
-                      Edit
+                      Modifier
                     </button>
                     <button
                       type="button"
                       className="text-red-600 hover:text-red-900 bg-red-50 px-3 py-1 rounded-md hover:bg-red-100 transition-colors duration-200"
                       onClick={() => deleteUser(user.id)}                    
                     >
-                      Delete
+                      Supprimer
                     </button>
                   </td>
                 </tr>

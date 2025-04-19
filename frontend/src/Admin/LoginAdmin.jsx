@@ -18,7 +18,7 @@ function LoginAdmin() {
 
   return (
     <div>
-         <h2 className='text-2xl font-bold mb-4'>Login</h2> 
+         <h2 className='text-2xl font-bold mb-4'>Se connecter</h2> 
       <form onSubmit={handleLoginAdmin}>
         <div className='mb-4'>
           <label  className='block text-gray-700'>Email</label>

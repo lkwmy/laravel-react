@@ -39,9 +39,9 @@ function Checkout({setOrder}) {
                     </div>
                     <div className={`space-y-4 ${billingToggle ? "" : "hidden"}` }>
                         <div>
-                            <label htmlFor="" className='block text-gray-700'>Name</label>
+                            <label htmlFor="" className='block text-gray-700'>Nom</label>
                             <input type="text"
-                            placeholder='Enter Name'
+                            placeholder='Entez Nom'
                             name='name'
                             className='w-full px-3 py-2 border rounded-lg ' />
                         </div>
@@ -49,14 +49,14 @@ function Checkout({setOrder}) {
                         <div>
                             <label htmlFor="" className='block text-gray-700'>Email</label>
                             <input type="email"
-                            placeholder='Enter Email'
+                            placeholder='Entrez email'
                             name='email'
                             className='w-full px-3 py-2 border rounded-lg' />
                         </div>
                         <div>
-                            <label htmlFor="" className='block text-gray-700'>Phone</label>
+                            <label htmlFor="" className='block text-gray-700'>Téléphone</label>
                             <input type="text" 
-                            placeholder='Enter Phone Number'
+                            placeholder='Entrez le numéro de téléphone'
                             name='phone'
                             className='w-full px-3 py-2 border rounded-lg'/>
                         </div> 
